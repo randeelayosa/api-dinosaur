@@ -3,51 +3,29 @@ import 'bootstrap/scss/bootstrap.scss';
 import './sass/styles.scss';
 import './backEnd.js';
 import $ from 'jquery';
-import {Tamagotchi} from "./backEnd.js";
+import {Dino} from "./backEnd.js";
 
 
-$(document).ready(function() {
 
-  const bongo = new Tamagotchi();
-  let hungryIntervalId = bongo.hungry();
-  let sleepIntervalId = bongo.sleepy();
-  let boredIntervalId = bongo.bored();
-  // let deathIntervalId = bongo.death();
-  bongo.death(hungryIntervalId, sleepIntervalId, boredIntervalId);
-  // bongo.trueDeath(deathIntervalId);
-  bongo.checkNumbers();
-  // sleepBar(bongo);
-  bongo.sleepBar();
-  bongo.foodBar();
-  bongo.funBar();
+  $(document).ready(function() {
+    // const dingo = new Dino;
+    // // console.log(dingo);
+    // dingo.summonDinos();
 
-  $('#feedBut').click(function() {
-    bongo.feed();
-    console.log(bongo.food)
+    // const weHaveDinos = dingo.singleDino;
+    // console.log(weHaveDinos);
+    const dino = new Dino();
+    dino.createDino();
+    setTimeout(function() {
+      $(".dino-output").text(dino.data[0][2]);
+    const word = (dino.data[0][2]).length;
+    const blanks = dino.gameWord(word);
+    console.log(word);
+    }, 100);
+
+
+
   });
-  $('#playBut').click(function() {
-    bongo.play();
-    console.log(bongo.attention)
-  });
-  $('#sleepBut').click(function() {
-    bongo.rest();
-    console.log(bongo.sleep);
-  });
-  $('#pickOn').click(function(){
-    bongo.pickOn();
-  })
-  $('#inject').click(function(){
-    bongo.inject();
-  })
-
-
-  // bongo.endIt(hungryIntervalId);
-  // bongo.endIt(sleepIntervalId);
-  // bongo.endIt(boredIntervalId);
-  // bongo.endIt(deathIntervalId);
-
-
-});
 
 
 
@@ -55,13 +33,32 @@ $(document).ready(function() {
 
 
 
-// $(document).ready(function() {
-//   $('#ping-pong-form').submit(function(event) {
-//     event.preventDefault();
-//     var goal = $('#goal').val();
-//     var output = pingPong(goal);
-//     output.forEach(function(element) {
-//       $('#solution').append("<li>" + element + "</li>");
-//     });
-//   });
-// });
+
+
+
+
+
+
+
+
+  // let promise = new Promise(function(resolve, reject) {
+  //   let request = new XMLHttpRequest();
+  //   let url = `http://dinoipsum.herokuapp.com/api/?format=json`;
+  //   request.onload = function() {
+  //     if (this.status === 200) {
+  //       resolve(request.response);
+  //     } else {
+  //       reject(Error(request.statusText));
+  //     }
+  //   }
+  //   request.open("GET", url, true);
+  //   request.send();
+  // });
+  //
+  // promise.then(function(response) {
+  //   let body = JSON.parse(response);
+  //
+  //   console.log(body);
+  // }, function(error) {
+  //   console.log(error);
+  // });
