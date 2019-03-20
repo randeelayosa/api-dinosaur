@@ -18,12 +18,12 @@ import {Dino} from "./backEnd.js";
     dino.createDino();
     setTimeout(function() {
       $(".dino-output").text(dino.data[0][2]);
-    const word = (dino.data[0][2]).length;
+      (dino.data[0][2]).length;
+      const word = (dino.data[0][2]);
     const blanks = dino.gameWord(word);
-    console.log(word);
+    // console.log(word);
+    console.log(blanks);
     }, 100);
-
-
 
   });
 
