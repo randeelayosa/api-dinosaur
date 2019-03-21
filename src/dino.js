@@ -46,8 +46,6 @@ export class Dino {
 
 
 
-
-
 //
 //  export class Dino {
 //    constructor() {
