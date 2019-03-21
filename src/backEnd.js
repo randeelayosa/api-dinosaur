@@ -1,13 +1,4 @@
 import $ from 'jquery';
-//
-//
-// export class Dino {
-//   constructor (input) {
-//     this.dino = input;
-//   }
-//
-//
-
 
 
 export class Dino {
@@ -39,13 +30,15 @@ export class Dino {
     });
   }
 
-//FIX THIS FUNCTION
   gameWord(word){
-    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    const dinosaur = word;
-    dinosaur.map(function(alphabet){
-      return alphabet.replace(/[abcdefghijklmnopqrstuvwxyz]/gi, "_");
+    let dinosaur = word.split("");
+    console.log(dinosaur);
+    let dinoSplit = dinosaur.map(function(dinoName) {
+       let dinoBlank = dinoName.replace(/[abcdefghijklmnopqrstuvwxyz]/gi, "_");
+       console.log("inside");
+       return dinoBlank
     });
+    return dinoSplit.join(" ");
   }
 
 }

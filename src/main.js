@@ -20,10 +20,11 @@ import {Dino} from "./backEnd.js";
       $(".dino-output").text(dino.data[0][2]);
       (dino.data[0][2]).length;
       const word = (dino.data[0][2]);
+      console.log(word);
     const blanks = dino.gameWord(word);
-    // console.log(word);
     console.log(blanks);
-    }, 100);
+    $(".dino-output").text(blanks);
+  }, 200);
 
   });
 
